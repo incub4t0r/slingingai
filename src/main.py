@@ -31,7 +31,7 @@ def openai_api_request(user_prompt):
     data = {
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": user_prompt}],
-        "max_tokens": 100,
+        # "max_tokens": 100,
         "temperature": 1.2,
         }
     headers = {
@@ -43,11 +43,12 @@ def openai_api_request(user_prompt):
         json=data,
         headers=headers
     )
+    print(completion.text)
     try:
         openai_response = completion.json()['choices'][0]['message']['content']
         print(openai_response)
-    except:
-        openai_response = "Something went wrong. Please try again."
+    except Exception as e:
+        openai_response = f"Something went wrong. Please try again. {e}"
     return openai_response
 
 @app.get("/", response_class=HTMLResponse)

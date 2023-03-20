@@ -2,7 +2,9 @@
     --bg-color: #1f1f1f;
     --drop-shadow: 0 2px 15px -3px rgba(0,0,0,0.5),0 10px 20px -2px rgba(0,0,0,0.04);
     --radius: calc(0.5rem - 1px);
-    --up-overlay: rgba(255,255,255,0.05);
+    --up-overlay: rgba(242,242,242,0.05);
+    /* --up-color: rgba(50,50,50,1); */
+    --up-color: #2A2A2A;
 }
 
 * {
@@ -10,6 +12,7 @@
     margin: 0;
     padding: 0;
     transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-family: 'Hanken Grotesk', sans-serif;
 }
 
 html {
@@ -40,7 +43,12 @@ body{
 }
 
 /* target the last p element in  #response*/
-#response p:last-child {
+/* #response p:last-child {
+    margin-bottom: 0;
+} */
+
+/* target the last element in #response */
+#response > *:last-child {
     margin-bottom: 0;
 }
 
@@ -53,36 +61,67 @@ footer {
     background: linear-gradient(0deg, rgb(15, 15, 15) 0%, hsla(0, 0%, 100%, 0) 90%);
 }
 
-pre {
+/* pre {
     background-color: var(--bg-color);
     padding: 10px;
     border-radius: 5px;
+} */
+
+code * {
+    font-family: 'Roboto Mono', monospace;
 }
 
 .card {
     box-shadow: var(--drop-shadow);
     border-radius: var(--radius);
     border: none;
-    background-color: var(--up-overlay);
+    background-color: var(--up-color);
     color: whitesmoke;
 }
 
-.form-control {
+.form-control-custom {
     background-color: var(--bg-color);
     color: whitesmoke;
     border-color: darkgray;
 }
-/* target the placeholder value */
-.form-control::placeholder {
+
+.form-control-custom::placeholder {
     color: darkgray;
 }
 
-.form-control:focus {
+.form-control-custom:focus {
     background-color: var(--bg-color);
     color: whitesmoke;
+    border-color: darkgray;
 }
 
-.form-control:disabled {
+.form-control-custom:disabled {
     background-color: var(--bg-color);
     color: darkgray;
+    border-color: darkgray;
+}
+
+#greeting_cards * {
+    color: darkgray;
+}
+
+
+.btn-custom {
+    background-color: var(--bg-color);
+    border-color: darkgray;
+    color: white;
+    opacity: 1;
+}
+
+.btn-custom:hover{
+    outline-color: white;
+    border-color: darkgray;
+    opacity: 1;
+}
+
+.btn-custom:disabled{
+    background-color: var(--bg-color);
+    color: darkgray;
+    border-color: darkgray;
+    opacity: 1;
 }

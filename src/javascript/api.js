@@ -31,6 +31,7 @@ function gptapi(){
             $('#response').html(html);
             $('#user_request_form *').removeAttr("disabled");
             console.log(response);
+            hljs.highlightAll();
         },
         error: function(error) {
             // Handle error here
@@ -39,6 +40,5 @@ function gptapi(){
             $('#user_request_form *').removeAttr("disabled");
             console.log(error);
         }
-            
     })
 }
