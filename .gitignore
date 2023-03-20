@@ -1,2 +1,5 @@
 /keys/*
 *.env*
+
+*__pycache__*
+*output.txt*
