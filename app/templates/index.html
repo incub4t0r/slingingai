@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlingingAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./static/pastel.css">
+    <link rel="stylesheet" href="./static/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="content">
+            <div class="container col-lg-6 mt-4" id="response_parent">
+                <div class="card">
+                    <div class="card-body">
+                        <span id="response">
+                            Overflowing the buffers while waiting...
+<!--                             
+                            A REST (Representational State Transfer) API (Application Programming Interface) is a set of rules and conventions for building and interacting with web services.
+                            It is an architectural style that enables communication between client and server applications in a simple, stateless manner, typically over HTTP. In a RESTful system, resources (such as data objects, services, or collections) are identified by URLs, and these resources are accessed and manipulated using standard HTTP methods, such as GET, POST, PUT, and DELETE -->
+                        </span> 
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="container mt-4 col-lg-6 text-muted text-center my-auto" id="greeting_cards">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                How do I make an HTTP request in Javascript?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                Explain the concept of a REST API.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                Summarize ADP 6-22 in 3 sentences.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="h-100 text-muted" id="greeting_cards">
+                <div class="container col-lg-6 h-100">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="d-flex flex-column">
+                            <div class="row g-4">
+                                <div class="col-lg-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            How do I make an HTTP request in Javascript?
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            Explain the concept of a REST API.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            Summarize ADP 6-22 in 3 sentences.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <footer class="align-baseline">
+            <div class="container col-lg-6">
+                <div class="card my-4">
+                    <div class="card-body">
+                        <form class="input-group" onsubmit="gptapi()" id="user_request_form">
+                            <input type="text" class="form-control no-border-focus" placeholder="Ask me anything!" id="user_request">
+                            <button type="submit" class="btn btn-outline-secondary" id="user_request_button"><i class="bi bi-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="./javascript/api.js"></script>
+</html>
