@@ -43,6 +43,17 @@ footer {
     border-color: inherit;
 }
 
-#response {
+/* #response {
     word-break: break-word;
+} */
+
+/* target the last p element in  #response*/
+#response p:last-child {
+    margin-bottom: 0;
+}
+
+pre {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 5px;
 }
