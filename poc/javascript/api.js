@@ -5,23 +5,35 @@ $.ajax({
     dataType: "text",
     success: function(data) {
         key = data;
-        console.log(key);
     },
     error: function(error) {
         console.log(error);
     }
 });
 
-console.log(key);
+$(document).ready(function () {
+    $("#user_request").focus();
+});
+
+
+function addLineBreaks(paragraph) {
+    // Replace all periods followed by a space with periods and line breaks
+    return paragraph.replace(/\. /g, '.<br><br>');
+}
+
 
 function gptapi(){
     event.preventDefault();
-    $('#response').html("I got your question, thinking...");
+    $('#user_request_form *').attr("disabled", true);
+    $('#response').html(`<i class="bi bi-cpu"></i>` + " Thinking...");
+    $('#greeting_cards').fadeOut(500);
     var user_request = $('#user_request').val();
 
     var data = {
         "model": "gpt-4",
-        "messages": [{"role": "user", "content": user_request}]
+        "messages": [{"role": "user", "content": user_request}],
+        "max_tokens": 100,
+        "temperature": 0.7,
     };
     
     $.ajax({
@@ -35,13 +47,15 @@ function gptapi(){
         success: function(response) {
             // Handle successful response here
             response_text = response.choices[0].message.content;
-            $('#response').html(response_text);
+            $('#response').html(addLineBreaks(response_text));
+            $('#user_request_form *').removeAttr("disabled");
             console.log(response);
         },
         error: function(error) {
             // Handle error here
-            response_text = "Sorry, I errored out. Please try again."
+            response_text = `<i class="bi bi-emoji-frown"></i>` + " Sorry, I errored out. Please try again.";
             $('#response').html(response_text);
+            $('#user_request_form *').removeAttr("disabled");
             console.log(error);
         }
     });

@@ -6,7 +6,7 @@
     outline-color: transparent;
     margin: 0;
     padding: 0;
-    
+    transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 html {
@@ -35,4 +35,14 @@ footer {
     flex: 1;
     overflow: auto;
     padding-bottom: 140px;
+}
+
+.no-border-focus:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: inherit;
+}
+
+#response {
+    word-break: break-word;
 }
