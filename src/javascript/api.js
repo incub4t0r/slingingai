@@ -1,16 +1,3 @@
-var key;
-
-$.ajax({
-    url: "../keys/gpt4_key.txt",
-    dataType: "text",
-    success: function(data) {
-        key = data;
-    },
-    error: function(error) {
-        console.log(error);
-    }
-});
-
 $(document).ready(function () {
     $("#user_request").focus();
 });
@@ -30,23 +17,20 @@ function gptapi(){
     var user_request = $('#user_request').val();
 
     var data = {
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": user_request}],
-        "max_tokens": 100,
-        "temperature": 0.7,
+        prompt: user_request,
     };
-    
+
+    console.log(JSON.stringify(data));
+
     $.ajax({
         type: "POST",
-        url: "https://api.openai.com/v1/chat/completions",
-        headers: {
-            "Authorization": "Bearer " + key,
-            "Content-Type": "application/json"
-        },
-        data: JSON.stringify(data),
+        url: "/api/prompt",
+        data: JSON.stringify({prompt: user_request}),
+        dataType: "json",
+        contentType: "application/json",
         success: function(response) {
             // Handle successful response here
-            response_text = response.choices[0].message.content;
+            response_text = response.openai_response;
             $('#response').html(addLineBreaks(response_text));
             $('#user_request_form *').removeAttr("disabled");
             console.log(response);
@@ -58,7 +42,31 @@ function gptapi(){
             $('#user_request_form *').removeAttr("disabled");
             console.log(error);
         }
-    });
+            
+    })
+    // $.ajax({
+    //     type: "POST",
+    //     url: "https://api.openai.com/v1/chat/completions",
+    //     headers: {
+    //         "Authorization": "Bearer " + key,
+    //         "Content-Type": "application/json"
+    //     },
+    //     data: JSON.stringify(data),
+    //     success: function(response) {
+    //         // Handle successful response here
+    //         response_text = response.choices[0].message.content;
+    //         $('#response').html(addLineBreaks(response_text));
+    //         $('#user_request_form *').removeAttr("disabled");
+    //         console.log(response);
+    //     },
+    //     error: function(error) {
+    //         // Handle error here
+    //         response_text = `<i class="bi bi-emoji-frown"></i>` + " Sorry, I errored out. Please try again.";
+    //         $('#response').html(response_text);
+    //         $('#user_request_form *').removeAttr("disabled");
+    //         console.log(error);
+    //     }
+    // });
 }
 
 // {
