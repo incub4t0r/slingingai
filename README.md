@@ -36,8 +36,8 @@ In the current state, there is only a proof of concept. To run this proof of con
   
 ### Phase 2
 
-- [ ] Create a FastAPI backend to handle the GPT4 API calls
-- [ ] Add FastAPI frontend endpoints to the UI
+- [X] Create a FastAPI backend to handle the GPT4 API calls
+- [X] Add FastAPI frontend endpoints to the UI
 - [ ] Address security issues with frontend and backend
 
 ### Phase 3
