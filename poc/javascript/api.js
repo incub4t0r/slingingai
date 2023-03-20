@@ -30,7 +30,7 @@ function gptapi(){
     var user_request = $('#user_request').val();
 
     var data = {
-        "model": "gpt-4",
+        "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": user_request}],
         "max_tokens": 100,
         "temperature": 0.7,
