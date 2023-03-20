@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en" data-bs-theme="">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,37 +10,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./static/pastel.css">
+    <link rel="stylesheet" href="./static/custom.css">
 </head>
 
-<body class="d-flex flex-column h-100">
-    <div class="container col-lg-6 mt-4">
-        <div class="card pt-2">
-            <div class="card-body" id="response">
-                <p>
-                    Hello! I'm ChatGPT, and I'm here to assist you. How may I help you today?
-                </p>
-                <p>
-                    As a language model trained on the GPT-3.5 architecture, I have access to a vast range of knowledge and can help answer questions or provide information on a wide range of topics. Whether you need assistance with a homework assignment, want to learn more about a particular subject, or just want to have a casual conversation, I'm here to chat and help in any way that I can.
-                </p>
-                <p>
-                    One of the things that makes me unique is my ability to understand context and generate responses that are not only informative but also engaging and conversational. I use machine learning algorithms to analyze patterns in human language and can adapt my responses to match the tone and style of the conversation. So whether you prefer a more formal or casual tone, I can adjust my responses to match your preferences and make our conversation more natural and enjoyable. Feel free to ask me anything, and I'll do my best to provide you with helpful and accurate information.
-                </p>
-            </div>
-        </div>
-    </div>
-    <footer class="footer mt-auto py-3">
-        <div class="container col-lg-6">
-            <div class="card my-2">
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Enter text here" aria-label="Enter text here"
-                            aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+<body>
+    <div class="parent">
+        <div class="content">
+            <div class="container col-lg-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <span id="response">
+                            Waiting for input...
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+        <footer class="align-baseline">
+            <div class="container col-lg-6">
+                <div class="card my-4">
+                    <div class="card-body">
+                        <form class="input-group" onsubmit="gptapi()">
+                            <input type="text" class="form-control" placeholder="Enter text here" aria-label="Enter text here"
+                                aria-describedby="button-addon2" id="user_request">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+<script src="./javascript/api.js"></script>
 </html>
