@@ -31,7 +31,7 @@ def openai_api_request(user_prompt):
     data = {
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": user_prompt}],
-        # "max_tokens": 100,
+        "max_tokens": 1000,
         "temperature": 1.2,
         }
     headers = {
@@ -43,10 +43,10 @@ def openai_api_request(user_prompt):
         json=data,
         headers=headers
     )
-    print(completion.text)
+    # print(completion.text)
     try:
         openai_response = completion.json()['choices'][0]['message']['content']
-        print(openai_response)
+        # print(openai_response)
     except Exception as e:
         openai_response = f"Something went wrong. Please try again. {e}"
     return openai_response
@@ -60,10 +60,13 @@ def prompt(user_prompt: User_Prompt, request: Request):
     request_prompt = user_prompt.prompt.rstrip()
     print(request_prompt)
     openai_response = openai_api_request(request_prompt)
-    print(openai_response)
+    # print(openai_response)
     # print(user_prompt.prompt)
     return {"openai_response": openai_response}
 
+@app.get("/favicon.ico")
+def favicon():
+    return FileResponse(os.path.join(BASE_PATH, "static", "favicon.ico"))
 
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0', port=5005)
