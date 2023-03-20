@@ -11,8 +11,10 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./static/pastel.css">
-    <link rel="stylesheet" href="./static/custom.css">
+    <!-- <link rel="stylesheet" href="./static/pastel.css"> -->
+    <!-- <link rel="stylesheet" href="./static/custom.css"> -->
+    <link rel="stylesheet" href="./static/dark.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
 </head>
@@ -62,7 +64,7 @@
                     <div class="card-body">
                         <form class="input-group" onsubmit="gptapi()" id="user_request_form">
                             <input type="text" class="form-control no-border-focus" placeholder="Ask me anything!" id="user_request">
-                            <button type="submit" class="btn btn-outline-secondary" id="user_request_button"><i class="bi bi-send"></i></button>
+                            <button type="submit" class="btn btn-outline-secondary" data-bs-theme="dark" id="user_request_button"><i class="bi bi-send"></i></button>
                         </form>
                     </div>
                 </div>

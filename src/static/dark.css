@@ -1,7 +1,8 @@
 :root {
-    --bg-color: hsl(0, 0%, 96%);
-    --drop-shadow: 0 2px 15px -3px rgba(0,0,0,0.07),0 10px 20px -2px rgba(0,0,0,0.04);
+    --bg-color: #1f1f1f;
+    --drop-shadow: 0 2px 15px -3px rgba(0,0,0,0.5),0 10px 20px -2px rgba(0,0,0,0.04);
     --radius: calc(0.5rem - 1px);
+    --up-overlay: rgba(255,255,255,0.05);
 }
 
 * {
@@ -18,13 +19,6 @@ html {
 body{ 
     height: 100%;
     background-color: var(--bg-color);
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(0deg, rgb(200, 200, 200) 0%, hsla(0, 0%, 100%, 0) 90%);
 }
 
 .parent {
@@ -50,6 +44,15 @@ footer {
     margin-bottom: 0;
 }
 
+/* everything that needs color changing */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(0deg, rgb(15, 15, 15) 0%, hsla(0, 0%, 100%, 0) 90%);
+}
+
 pre {
     background-color: var(--bg-color);
     padding: 10px;
@@ -60,4 +63,26 @@ pre {
     box-shadow: var(--drop-shadow);
     border-radius: var(--radius);
     border: none;
+    background-color: var(--up-overlay);
+    color: whitesmoke;
+}
+
+.form-control {
+    background-color: var(--bg-color);
+    color: whitesmoke;
+    border-color: darkgray;
+}
+/* target the placeholder value */
+.form-control::placeholder {
+    color: darkgray;
+}
+
+.form-control:focus {
+    background-color: var(--bg-color);
+    color: whitesmoke;
+}
+
+.form-control:disabled {
+    background-color: var(--bg-color);
+    color: darkgray;
 }
