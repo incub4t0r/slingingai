@@ -16,7 +16,6 @@ var html;
 function chat() {
     event.preventDefault();
     $('#user_request_form *').attr("disabled", true);
-    // $('#response').html(`<i class="bi bi-cpu"></i>` + " Thinking...");
     $('#greeting_cards').fadeOut(200);
     $('#response_parent').fadeTo(500, 1);
     const userPrompt = $('#user_request').val();
@@ -53,6 +52,7 @@ function chat() {
                 if (done) {
                     html = converter.makeHtml(responseDiv.innerHTML);
                     $('#response').html(html);
+                    $('#user_request').val('');
                     $('#user_request_form *').removeAttr("disabled");
                     hljs.highlightAll();
                     store_result(promptDTG, userPrompt, html);
@@ -82,7 +82,6 @@ function store_result(promptDTG, userPrompt, html){
 function get_previous_results(){
     $('#accordionPreviousResults').html('');
     var keys = Object.keys(localStorage);
-    // if keys is empty, hide the accordion
     if (keys.length === 0) {
         $('#previous_results_parent').hide();
     } else {
