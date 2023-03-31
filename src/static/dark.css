@@ -13,6 +13,11 @@
     padding: 0;
     transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-family: 'Hanken Grotesk', sans-serif;
+    scrollbar-width: none !important;
+}
+
+*::-webkit-scrollbar {
+    width: 0px !important;
 }
 
 html {
@@ -147,3 +152,47 @@ textarea {
 textarea::-webkit-scrollbar {
     width: 0.2rem;
 }
+
+#delete:hover {
+    /* recolor svg red */
+    color: #AF233A;
+}
+
+
+.accordion-item {
+    background-color: inherit;
+    color: whitesmoke;
+    box-shadow: none;
+    border-color: gray transparent;
+    /* border: 1px; */
+}
+
+.accordion-button {
+    background-color: inherit;
+    /* color: whitesmoke; */
+    color: darkgray;
+
+}
+
+.accordion-button:not(.collapsed) {
+    color: inherit;
+    background-color: inherit;
+    border-color: whitesmoke;
+    border: 1px;
+}
+
+.accordion-button:focus {
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F5F5F5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F5F5F5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
+
