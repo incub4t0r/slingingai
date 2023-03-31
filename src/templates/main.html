@@ -14,8 +14,7 @@
     <!-- <link rel="stylesheet" href="./static/pastel.css"> -->
     <!-- <link rel="stylesheet" href="./static/custom.css"> -->
     <link rel="stylesheet" href="./static/dark.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai-sublime.min.css" integrity="sha512-ade8vHOXH67Cm9z/U2vBpckPD1Enhdxl3N05ChXyFx5xikfqggrK4RrEele+VWY/iaZyfk7Bhk6CyZvlh7+5JQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -27,37 +26,36 @@
 <body>
     <div class="parent">
         <div class="content">
-            <div class="container col-lg-6 mt-4" id="response_parent">
-                <div class="card">
-                    <div class="card-body">
-                        <span id="response">
-                            Slinging some code while waiting for your request...
-                        </span> 
-                    </div>
-                </div>
-            </div>
+            
             <div class="container mt-4 col-lg-6 text-muted text-center my-auto" id="greeting_cards">
                 <div class="row g-4">
                     <div class="col-lg-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                How do I make an HTTP request in Javascript?
+                                I'm using GPT4 to answer your questions.
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                How much does the OpenAI API cost?
+                                Please me a second to format everything after my response is complete.
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                Summarize ADP 6-22 in 3 sentences.
+                                My creator is constantly improving me, check back for updates!
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container col-lg-6 mt-4" id="response_parent" style="display: none;">
+                <div class="card">
+                    <div class="card-body">
+                        <span id="response"></span> 
                     </div>
                 </div>
             </div>
@@ -68,10 +66,13 @@
                 <div class="card my-4">
                     <div class="card-body">
                         <form class="input-group" onsubmit="chat()" id="user_request_form">
-                            <textarea data-at-expandable style="width: 100%;" class="no-border-focus form-control-custom rounded" placeholder="Ask me anything!"  id="user_request"></textarea>
+                            <textarea data-at-expandable class="no-border-focus form-control form-control-custom rounded" placeholder="Ask me anything!"  id="user_request"></textarea>
                             <!-- <input type="text" class="border-end-0 no-border-focus form-control form-control-custom" placeholder="Ask me anything!" id="user_request"> -->
-                            
-                            <button type="submit" class="p-2 border-0 btn-custom" id="user_request_button"><i class="bi bi-send"></i></button>
+                            <button type="submit" class="p-2 border-0 btn-custom" id="user_request_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                                </svg>
+                            </button>
                         </form>
                     </div>
                 </div>

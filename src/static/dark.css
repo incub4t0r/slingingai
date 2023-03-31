@@ -17,11 +17,17 @@
 
 html {
     height: 100%;
+    width: 100vw;
 }
 
 body{ 
     height: 100%;
     background-color: var(--bg-color);
+    scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+    width: 0.2rem;
 }
 
 .parent {
@@ -42,11 +48,6 @@ body{
     border-color: inherit;
 }
 
-/* target the last p element in  #response*/
-/* #response p:last-child {
-    margin-bottom: 0;
-} */
-
 /* target the last element in #response */
 #response > *:last-child {
     margin-bottom: 0;
@@ -55,9 +56,10 @@ body{
 /* everything that needs color changing */
 
 footer {
+    width: 100vw;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    /* width: 100%; */
     background: linear-gradient(0deg, rgb(15, 15, 15) 0%, hsla(0, 0%, 100%, 0) 90%);
 }
 
@@ -116,6 +118,7 @@ code * {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 5;
 }
 
 .btn-custom:hover{
@@ -137,5 +140,10 @@ textarea {
     padding: 0.5rem;
     /* height: 2.5rem; */
     height: auto;
+    scrollbar-width: thin;
     /* min-height: 1rem; */
+}
+
+textarea::-webkit-scrollbar {
+    width: 0.2rem;
 }
