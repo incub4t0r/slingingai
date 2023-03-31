@@ -73,7 +73,8 @@ code * {
 
 .card {
     box-shadow: var(--drop-shadow);
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
+    border-radius: 10px;
     border: none;
     background-color: var(--up-color);
     color: whitesmoke;
@@ -107,10 +108,14 @@ code * {
 
 
 .btn-custom {
-    background-color: var(--bg-color);
-    border-color: darkgray;
+    /* background-color: var(--bg-color); */
+    background-color: inherit;
+    /* border-color: darkgray; */
     color: white;
     opacity: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .btn-custom:hover{
@@ -120,8 +125,17 @@ code * {
 }
 
 .btn-custom:disabled{
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
     color: darkgray;
     border-color: darkgray;
     opacity: 1;
+}
+
+textarea {
+    resize: none;
+    max-height: 10rem;
+    padding: 0.5rem;
+    /* height: 2.5rem; */
+    height: auto;
+    /* min-height: 1rem; */
 }

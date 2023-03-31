@@ -31,7 +31,7 @@
                 <div class="card">
                     <div class="card-body">
                         <span id="response">
-                            Overflowing the buffers while waiting...
+                            Slinging some code while waiting for your request...
                         </span> 
                     </div>
                 </div>
@@ -68,8 +68,10 @@
                 <div class="card my-4">
                     <div class="card-body">
                         <form class="input-group" onsubmit="chat()" id="user_request_form">
-                            <input type="text" class="border-end-0 no-border-focus form-control form-control-custom" placeholder="Ask me anything!" id="user_request">
-                            <button type="submit" class="btn border-start-0 btn-custom" id="user_request_button"><i class="bi bi-send"></i></button>
+                            <textarea data-at-expandable style="width: 100%;" class="no-border-focus form-control-custom rounded" placeholder="Ask me anything!"  id="user_request"></textarea>
+                            <!-- <input type="text" class="border-end-0 no-border-focus form-control form-control-custom" placeholder="Ask me anything!" id="user_request"> -->
+                            
+                            <button type="submit" class="p-2 border-0 btn-custom" id="user_request_button"><i class="bi bi-send"></i></button>
                         </form>
                     </div>
                 </div>
@@ -78,4 +80,5 @@
     </div>
 </body>
 <script src="./javascript/api.js"></script>
+<script src="./javascript/textarea_sizer.js"></script>
 </html>
