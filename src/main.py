@@ -35,6 +35,8 @@ async def index(request: Request):
 @app.post("/api/prompt")
 async def prompt(user_prompt: User_Prompt):
     request_prompt = user_prompt.prompt.rstrip()
+    # filter the prompt to remove any characters that might break the API, anc cause XSS
+    request_prompt = request_prompt.replace("<", "&lt;").replace(">", "&gt;")
     return StreamingResponse(slingingai.ask(request_prompt), media_type="text/event-stream")
 
 @app.get("/favicon.ico")

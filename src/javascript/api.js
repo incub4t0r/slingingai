@@ -28,6 +28,7 @@ function chat() {
         },
         body: JSON.stringify({ prompt: userPrompt })
     }).then(response => {
+        console.log(response);
             const reader = response.body.getReader();
             const stream = new ReadableStream({
                 start(controller) {
@@ -64,11 +65,17 @@ function chat() {
         }).catch(error => console.error(error));
 }
 
+
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 // store each prompt and response in localstorage
 function store_result(promptDTG, userPrompt, html){
     try {
+        // userPrompt = userPrompt.replace("<", "&lt;").replace(">", "&gt;")
         var result = {
-            prompt: userPrompt,
+            prompt: htmlEntities(userPrompt),
             response: html
         };
         localStorage.setItem(promptDTG, JSON.stringify(result));
