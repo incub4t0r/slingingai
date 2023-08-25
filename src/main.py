@@ -6,7 +6,6 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import os
 from pathlib import Path
-
 from dotenv import load_dotenv
 from gptapi import OpenAI
 
@@ -18,12 +17,10 @@ OPENAI_KEY = os.getenv('OPENAI_KEY')
 
 slingingai = OpenAI(OPENAI_KEY)
 
-
 app = FastAPI()
 app.mount("/static", StaticFiles(directory=str(os.path.join(ROOT, "static"))), name="static")
 app.mount("/javascript", StaticFiles(directory=str(os.path.join(ROOT, "javascript"))), name="javascript")
 templates = Jinja2Templates(directory="templates")
-
 
 class User_Prompt(BaseModel):
     prompt: str
@@ -31,6 +28,10 @@ class User_Prompt(BaseModel):
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("main.html", {"request": request})
+
+@app.get("/redesign", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("redesign.html", {"request": request})
 
 @app.post("/api/prompt")
 async def prompt(user_prompt: User_Prompt):
