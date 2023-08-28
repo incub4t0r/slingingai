@@ -83,11 +83,16 @@
         left: 0;
         width: 100%;
         height: 300vh;
-        background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha (0.5) for the desired transparency */
-        z-index: 1; /* Make sure it's above the main content */
-        transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Add a transition for the opacity property */
-        -webkit-backdrop-filter: blur(5px); /* Apply a blur effect to the background */
-        backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Adjust the alpha (0.5) for the desired transparency */
+        z-index: 1;
+        /* Make sure it's above the main content */
+        transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        /* Add a transition for the opacity property */
+        -webkit-backdrop-filter: blur(5px);
+        /* Apply a blur effect to the background */
+        backdrop-filter: blur(5px);
+        /* Apply a blur effect to the background */
         display: none;
     }
 
@@ -96,12 +101,20 @@
         top: 0;
     }
 
+    .btn:not(:hover) {
+        transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 0.5;
+    }
+
+    .btn-custom>h1>a>i {
+        color: #000000;
+    }
+    
     /* For mobile devices with a maximum width of 767px (adjust as needed) */
     @media (max-width: 767px) {
         #main-content {
             position: absolute;
         }
-
         #overlay {
             display: block;
         }
@@ -112,22 +125,172 @@
         #main-content {
             position: relative;
         }
+
+        #overlay {
+            display: none;
+        }
+
+        #sidebar {
+            position: sticky;
+            height: 100vh;
+            top: 0;
+        }
     }
 </style>
 
 <body>
     <div class="parent">
         <div class="content">
-            <div class="container-fluid overflow-x-hidden">
-                <div class="row" style="min-height: 100vh; min-height: fill-available; min-height: -webkit-fill-available;">
+            <div class="container-fluid">
+                <div class="row">
                     <div class="d-flex p-0">
-                        <div class="d-flex flex-shrink-0 align-items-center flex-column card rounded-start-0" id="sidebar" style="z-index: 1;">
+                        <!-- Sidebar -->
+                        <div style="min-height: 100vh; z-index: 1;"
+                            class="d-flex flex-shrink-0 align-items-center flex-column card rounded-start-0" id="sidebar">
+                            <div class="p-2 pb-0 btn btn-custom">
+                                <h1>
+                                    <a href="">
+                                        <i class="bi bi-house"></i>
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="p-2 pb-0 btn btn-custom">
+                                <h1>
+                                    <a href="">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="p-2 pb-0 btn btn-custom">
+                                <h1>
+                                    <a href="">
+                                        <i class="bi bi-gear"></i>
+                                    </a>
+                                </h1>
+                            </div>
+
+                            <div class="mt-auto p-2 pb-0 btn btn-custom">
+                                <h1>
+                                    <a href="">
+                                        <i class="bi bi-box-arrow-left"></i>
+                                    </a>
+                                </h1>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="w-100 px-4 py-2 overflow-auto" id="main-content" style="z-index: 0;">
+                            <div id="overlay"></div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        testing
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+<!-- <body>
+    <div class="parent">
+        <div class="content">
+            <div class="container-fluid overflow-x-hidden">
+                <div class="row"
+                    style="min-height: 100vh; min-height: fill-available; min-height: -webkit-fill-available;">
+                    <div class="d-flex p-0">
+                        <div class="d-flex flex-shrink-0 align-items-center flex-column card rounded-start-0"
+                            id="sidebar" style="z-index: 1;">
                             <div class="p-2">
                                 <h1><i class="bi bi-house"></i></h1>
                             </div>
-                            <div class="p-2">
-                                <h1><i class="bi bi-paperclip"></i></h1>
-                            </div>
+
                             <div class="p-2">
                                 <h1><i class="bi bi-gear"></i></h1>
                             </div>
@@ -231,7 +394,8 @@
             </div>
         </div>
     </div>
-</body>
+</body> -->
+
 </html>
 
 <script src="https://hammerjs.github.io/dist/hammer.js"></script>
@@ -243,11 +407,10 @@
 
         hammertime_main.on("panright", function (ev) {
             if (window.innerWidth < 768) {
+                window.scrollTo(0, 0);
                 sidebar.style.transform = "translateX(0)";
                 overlay.style.display = "block"; // Show the overlay
                 console.log(window.scrollY);
-                // snap the window to the top
-                window.scrollTo(0, 0);
             }
         });
 
@@ -257,6 +420,18 @@
                 overlay.style.display = "none"; // Hide the overlay
             }
         });
+    });
+
+    $(window).resize(function() {
+        if (window.innerWidth > 768) {
+            sidebar.style.transform = "translateX(0)";
+            overlay.style.display = "none"; // Hide the overlay
+        }
+
+        else {
+            overlay.style.display = "block"; // Hide the overlay
+        }
+        console.log('window was resized');
     });
 </script>
 <!-- <script src="./javascript/api.js"></script>
