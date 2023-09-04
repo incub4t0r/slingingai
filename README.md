@@ -2,6 +2,8 @@
 
 SlingingAI is an internal chat tool utilizing the GPT4 API. 
 
+SlingingAI is built in a three tier archictecture. The frontend is built using Sveltekit, the backend is built in Python using FastAPI, and the database is built using Google's Firestore.
+
 - [SlingingAI](#slingingai)
   - [Packages used](#packages-used)
   - [Installation](#installation)
@@ -10,7 +12,6 @@ SlingingAI is an internal chat tool utilizing the GPT4 API.
     - [Phase 1](#phase-1)
     - [Phase 2](#phase-2)
     - [Phase 3](#phase-3)
-
 
 ## Packages used
 
@@ -30,7 +31,6 @@ SlingingAI is an internal chat tool utilizing the GPT4 API.
    
 ## How to use
 
-In the current state, there is only a proof of concept. To run this proof of concept, simply open the `index.html` file in your browser.
 
 ## TODO
 
@@ -43,7 +43,6 @@ In the current state, there is only a proof of concept. To run this proof of con
 
 - [X] Create a FastAPI backend to handle the GPT4 API calls
 - [X] Add FastAPI frontend endpoints to the UI
-- [ ] Address security issues with frontend and backend
 
 ### Phase 3
 

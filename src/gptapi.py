@@ -23,7 +23,7 @@ class OpenAI():
             "temperature": 1.2,
             "stream": True,
         }
-        req = requests.post(self.url, headers=req_headers, json=req_data, stream=True)
+        req = requests.post(self.url, headers=req_headers, json=req_data, stream=True).text
         client = sseclient.SSEClient(req)
         for event in client.events():
             if event.data != "[DONE]":
